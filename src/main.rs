@@ -6,7 +6,12 @@ use config::Config;
 mod categories;
 use categories::Categories;
 
+mod crates;
+use crates::Crate;
+
 fn main () {
     let c = Categories::default();
-    println!("{:?}",c);
+    let lichen = Crate::from_url("https://crates.io/api/v1/crates/lichen");
+
+    println!("{:?}",lichen);
 }
