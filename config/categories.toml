@@ -1,0 +1,10 @@
+rendering_2d = [
+  "lyon",
+  "piston",
+]
+
+scripting = [
+  "dyon",
+  "gluon",
+  "lichen",
+]
