@@ -1,7 +1,7 @@
 #[derive(Deserialize,Debug)]
 pub struct Categories {
-    rendering_2d: Vec<String>,
-    scripting: Vec<String>
+    pub rendering_2d: Vec<String>,
+    pub scripting: Vec<String>
 }
 
 

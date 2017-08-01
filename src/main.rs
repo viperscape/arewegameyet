@@ -10,8 +10,11 @@ mod crates;
 use crates::Crate;
 
 fn main () {
-    let c = Categories::default();
-    let lichen = Crate::from_url("https://crates.io/api/v1/crates/lichen");
+    let cats = Categories::default();
 
-    println!("{:?}",lichen);
+    for n in cats.scripting {
+        let url = "https://crates.io/api/v1/crates/".to_owned() + &n;
+        let c = Crate::from_url(&url);
+        println!("{:?}",c);
+    }
 }
