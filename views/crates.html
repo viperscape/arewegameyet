@@ -1,0 +1,22 @@
+<a name="crates">
+  <h4 class="ui horizontal divider header">
+    <i class="list icon big"></i>
+    Crates
+  </h4>
+</a>
+{{#crates}}
+<div>
+  <a name="{{name}}"></a>
+  <div class="ui card">
+    <div class="content">
+      <a href="{{repo}}" title="github">
+        <i class="right floated github icon"></i>
+      </a>
+      <div class="header">{{name}}</div>
+      <div class="description">
+        <p>{{desc}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{{/crates}}

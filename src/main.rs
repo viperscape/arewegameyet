@@ -9,6 +9,9 @@ use categories::Categories;
 mod crates;
 use crates::Crate;
 
+mod render;
+use render::Render;
+
 fn main () {
     let cats = Categories::default();
 
@@ -17,4 +20,7 @@ fn main () {
         let c = Crate::from_url(&url);
         println!("{:?}",c);
     }
+
+    let r = Render::from_file("./views/crates.html").expect("Cannot parse template view");
+    let _b = r.render();
 }
