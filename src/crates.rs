@@ -1,10 +1,12 @@
 extern crate reqwest;
 extern crate serde_json;
 
+
+
 use self::serde_json::Value;
 use std::io::Read;
 
-#[derive(Debug)]
+#[derive(Debug,RustcEncodable)]
 pub struct Crate {
     name: String,
     ver: String,

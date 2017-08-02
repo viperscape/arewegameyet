@@ -23,8 +23,7 @@ impl Render {
         None
     }
 
-    pub fn render(&self) -> Vec<u8> {
-        let data: HashMap<String,String> = HashMap::new();
+    pub fn render(&self, data: HashMap<&str, Vec<::Crate>>) -> Vec<u8> {
         let mut bytes = vec![];
         let _ = self.0.render(&mut bytes, &data);
         bytes

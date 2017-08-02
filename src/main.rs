@@ -1,4 +1,5 @@
 #[macro_use] extern crate serde_derive;
+extern crate rustc_serialize;
 
 use std::collections::HashMap;
 
@@ -14,16 +15,22 @@ use crates::Crate;
 mod render;
 use render::Render;
 
+use std::fs::File;
+use std::io::prelude::*;
+
 fn main () {
     let cats = Categories::default();
 
     let scripting = collect(&cats.scripting);
-    println!("{:?}",scripting);
 
     let r = Render::from_file("./views/crates.html").expect("Cannot parse template view");
     let mut data = HashMap::new();
     data.insert("crates", scripting);
-    let _b = r.render();
+    let b = r.render(data);
+
+    if let Ok(mut file) = File::create("./build/scripting.html") {
+        let _ = file.write_all(&b);
+    }
 }
 
 /// Parse and collect crate info
