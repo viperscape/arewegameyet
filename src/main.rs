@@ -23,7 +23,7 @@ fn main () {
     let r = Render::from_file("./views/crates.html").expect("Cannot parse template view");
     let mut data = HashMap::new();
     data.insert("crates", scripting);
-    let b = r.render(data);
+    let _b = r.render();
 }
 
 /// Parse and collect crate info
