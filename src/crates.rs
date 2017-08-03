@@ -9,10 +9,10 @@ use std::io::Read;
 #[derive(Debug,RustcEncodable)]
 pub struct Crate {
     name: String,
-    ver: String,
-    desc: String,
-    lic: String,
-    repo: String
+    version: String,
+    description: String,
+    license: String,
+    repository: String
 }
 
 impl Crate {
@@ -65,11 +65,11 @@ impl Crate {
                 }
 
                 let c = Crate {
-                    repo: repo,
-                    ver: ver,
-                    lic: lic,
+                    repository: repo,
+                    version: ver,
+                    license: lic,
                     name: name,
-                    desc: desc,
+                    description: desc,
                 };
 
                 return Some(c)
